@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f0a1c;
+  color: #e2d9f3;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f0a1c; }
+::-webkit-scrollbar-thumb { background: #00ffa3; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b026ff; }
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+@layer utilities {
+  .text-display { font-family: var(--font-display); }
+  .text-mono { font-family: var(--font-mono); }
+  .section-pad { @apply py-24 px-6 md:px-12 lg:px-24; }
+  .card-base { @apply bg-card border border-border rounded-2xl; }
+}
+
+/* Gradient accent line */
+.accent-line {
+  height: 2px;
+  background: linear-gradient(90deg, #00ffa3, #b026ff, transparent);
+}
+
+/* Animated gradient bg */
+.gradient-bg {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(176,38,255,0.15) 0%, transparent 60%);
+}
+
+/* Glowing dot */
+.glow-dot {
+  box-shadow: 0 0 12px 3px rgba(0, 255, 163, 0.6);
+}
+
+/* Tag pill */
+.tag-pill {
+  @apply text-mono text-xs px-3 py-1 rounded-full bg-surface border border-border text-accent;
+}
