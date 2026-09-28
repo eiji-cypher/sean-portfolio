@@ -4,33 +4,29 @@ import { useState } from 'react'
 const experiences = [
   {
     role: 'Independent Web Developer',
-    company: 'Freelance & Personal Projects',
-    period: '2025 — 2026',
-    description: 'Exploring full-stack web development and backend integrations with the help of AI to understand modern web architecture.',
+    company: '2025 — Present',
+    period: '2025 — Present',
     highlights: [
-      'Developed and deployed a regional blog using Python and Flask on Vercel (region5.vercel.app)',
-      'Built a responsive static website for a local restaurant using HTML, CSS, and JavaScript',
+      'Built and deployed full-stack web applications using Python (Flask) and Next.js, managing serverless infrastructure on Vercel.',
+      'Designed custom frontend interfaces using Tailwind CSS and TypeScript, focusing on responsive layouts and client-side routing.',
+      'Developed lightweight, standalone web platforms and landing pages with vanilla JavaScript and semantic HTML.',
     ],
   },
   {
-    role: 'Student Developer (2nd Year)',
+    role: 'Student / Software Developer — 2nd Year',
     company: 'Academic Projects',
     period: '2025',
-    description: 'Collaborated on complex academic applications and advanced desktop software utilizing Java and C#.',
     highlights: [
-      'Co-developed "DMC Reserve", a reservation system for school rooms and equipment built with C# and DevExpress',
-      'Built "Office Manager", a Java desktop app designed with Scenebuilder',
-      'Integrated Jaspersoft for automated receipt printing functionality',
+      'Co-engineered "DMC Reserve", a desktop resource management application in C# and DevExpress, implementing custom UI controls and real-time database queries.',
+      'Developed a Java desktop application integrated with Jaspersoft Studio to automate dataset processing and print itemized PDF transaction receipts.',
     ],
   },
   {
-    role: 'Student Developer (1st Year)',
+    role: 'Student / Software Developer — 1st Year',
     company: 'Academic Projects',
     period: '2024',
-    description: 'Started foundational programming journey, focusing heavily on Java and core object-oriented principles.',
     highlights: [
-      'Developed an "Emergency Disaster Management System" desktop application',
-      'Programmed all UI elements purely via hardcoded Java, without visual builders',
+      'Authored a standalone Java desktop application using raw Swing/AWT layout managers without drag-and-drop visual builders, enforcing strict Object-Oriented Design patterns.',
     ],
   },
 ]
@@ -85,9 +81,7 @@ export default function Experience() {
                     <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-accent glow-dot" />
 
                     <p className="text-mono text-xs text-accent uppercase tracking-widest mb-1">{exp.period}</p>
-                    <h4 className="text-display text-2xl text-light mb-1">{exp.role}</h4>
-                    <p className="text-mono text-sm text-muted mb-3">{exp.company}</p>
-                    <p className="text-light/60 text-sm leading-relaxed mb-4">{exp.description}</p>
+                    <h4 className="text-display text-xl text-light font-semibold mb-1">{exp.role}</h4>
 
                     <ul className="space-y-1.5">
                       {exp.highlights.map((h, j) => (
@@ -140,13 +134,7 @@ export default function Experience() {
                 </div>
               ))}
 
-              {/* Add More Badge */}
-              <div className="card-base p-6 border-dashed flex items-center justify-center">
-                <p className="text-mono text-xs text-muted text-center">
-                  📎 More certifications coming soon<br />
-                  <span className="text-border">Certificates will be uploaded.</span>
-                </p>
-              </div>
+              {/* Placeholder removed */}
             </div>
           </div>
         </div>

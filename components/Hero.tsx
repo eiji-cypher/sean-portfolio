@@ -22,7 +22,7 @@ export default function Hero() {
             className="text-mono text-accent text-sm uppercase tracking-[0.3em] mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
           >
-            ⬡ Available for Work
+            ⬡ Full-Stack Software Developer | Philippines
           </p>
 
           <h1
@@ -43,7 +43,7 @@ export default function Hero() {
             className="text-light/70 text-lg md:text-xl font-light max-w-lg leading-relaxed mb-10 opacity-0 animate-fade-up"
             style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
           >
-          Full-Stack Web and Desktop Developer crafting performant, user-centric digital experiences — from elegant frontends to robust backend systems.
+          Full-stack software developer building production-ready web applications, custom desktop tools, and database architecture.
           </p>
 
           <div
@@ -86,7 +86,7 @@ export default function Hero() {
               className="absolute -top-4 -right-2 lg:-right-8 bg-card border border-border rounded-xl px-4 py-2 shadow-xl animate-float z-20"
             >
               <p className="text-mono text-xs text-muted">Stack</p>
-              <p className="text-mono text-sm text-accent font-medium">React · Next.js</p>
+              <p className="text-mono text-sm text-accent font-medium">Next.js · TypeScript</p>
             </div>
             <div 
               className="absolute -bottom-4 -left-2 lg:-left-8 bg-card border border-border rounded-xl px-4 py-2 shadow-xl animate-float z-20"
