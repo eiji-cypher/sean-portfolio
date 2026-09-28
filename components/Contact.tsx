@@ -157,7 +157,7 @@ export default function Contact() {
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-mono text-xs text-muted">
-            © 2025 Sean Garrett C. Pait. Built with Next.js & Tailwind CSS.
+            © 2026 Sean Garrett C. Pait. Built with Next.js, TypeScript, & Tailwind CSS.
           </p>
           <p className="text-mono text-xs text-muted">
             Designed with <span className="text-accent">♥</span> in the Philippines

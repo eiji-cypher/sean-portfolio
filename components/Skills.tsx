@@ -1,43 +1,24 @@
-const skillGroups = [
+const stackGroups = [
   {
     category: 'Frontend',
     icon: '◈',
-    skills: [
-      { name: 'HTML / CSS', level: 90 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'TypeScript', level: 75 },
-      { name: 'React', level: 80 },
-      { name: 'Next.js', level: 75 },
-      { name: 'Tailwind CSS', level: 85 },
-    ],
+    items: ['TypeScript', 'JavaScript (ES6+)', 'React 19', 'Next.js (App Router)', 'Tailwind CSS', 'DevExpress UI'],
   },
   {
-    category: 'Backend & Desktop',
+    category: 'Backend & Systems',
     icon: '◇',
-    skills: [
-      { name: 'Python', level: 80 },
-      { name: 'Flask', level: 75 },
-      { name: 'C#', level: 85 },
-      { name: 'DevExpress', level: 70 },
-    ],
+    items: ['PHP', 'Laravel', 'C#', '.NET Framework / WinForms', 'Python', 'Flask', 'Java'],
   },
   {
-    category: 'Tools & Platforms',
+    category: 'Database & ORM',
     icon: '◆',
-    skills: [
-      { name: 'GitHub', level: 85 },
-      { name: 'VS Code', level: 90 },
-      { name: 'Visual Studio', level: 80 },
-      { name: 'Vercel', level: 85 },
-      { name: 'Canva', level: 90 },
-    ],
+    items: ['SQLite', 'MySQL', 'PostgreSQL', 'Eloquent ORM'],
   },
-]
-
-const techBadges = [
-  'HTML/CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js',
-  'Tailwind CSS', 'Python', 'Flask', 'C#', 'DevExpress',
-  'GitHub', 'VS Code', 'Visual Studio', 'Vercel', 'Canva',
+  {
+    category: 'Tools & Environment',
+    icon: '◉',
+    items: ['Vercel', 'Git / GitHub', 'Visual Studio Code', 'Visual Studio 2022', 'Electron', 'WinForms'],
+  },
 ]
 
 export default function Skills() {
@@ -45,52 +26,29 @@ export default function Skills() {
     <section id="skills" className="section-pad bg-surface relative">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Header */}
         <div className="mb-16">
           <p className="text-mono text-accent text-xs uppercase tracking-[0.3em] mb-3">02 / Skills</p>
-          <h2 className="text-display text-5xl md:text-7xl text-light">TECH STACK</h2>
+          <h2 className="text-display text-5xl md:text-7xl text-light font-bold">TECH STACK</h2>
           <div className="accent-line w-16 mt-4" />
         </div>
 
-        {/* Skill Groups */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {skillGroups.map((group) => (
-            <div key={group.category} className="card-base p-8 hover:border-accent/40 transition-colors duration-300 group">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="text-accent text-xl">{group.icon}</span>
-                <h3 className="text-display text-2xl text-light tracking-wider">{group.category}</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stackGroups.map((group) => (
+            <div key={group.category} className="card-base p-6 hover:border-accent/40 transition-colors duration-300">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="text-accent">{group.icon}</span>
+                <h3 className="text-display text-lg text-light font-semibold tracking-wide">{group.category}</h3>
               </div>
-
-              <div className="space-y-5">
-                {group.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-mono text-sm text-light/80">{skill.name}</span>
-                      <span className="text-mono text-xs text-accent">{skill.level}%</span>
-                    </div>
-                    <div className="h-1 bg-border rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-accent to-accent-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
+              <ul className="space-y-2.5">
+                {group.items.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-accent/60 flex-shrink-0" />
+                    <span className="text-mono text-xs text-light/70">{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
-        </div>
-
-        {/* Tech Badge Cloud */}
-        <div className="card-base p-8">
-          <p className="text-mono text-xs text-muted uppercase tracking-widest mb-6">All Technologies</p>
-          <div className="flex flex-wrap gap-3">
-            {techBadges.map((tech) => (
-              <span key={tech} className="tag-pill hover:bg-accent/10 hover:border-accent/50 transition-colors duration-200 cursor-default">
-                {tech}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
