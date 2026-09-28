@@ -2,16 +2,16 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'About',      href: '#about' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Projects',   href: '#projects' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',    href: '#contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled,  setScrolled]  = useState(false)
+  const [menuOpen,  setMenuOpen]  = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -20,24 +20,25 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-ink/90 backdrop-blur-md border-b border-border' : 'bg-transparent'
+    <nav className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      scrolled ? 'bg-ink/95 backdrop-blur-md border-b border-border' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+
         {/* Logo */}
-        <a href="#" className="text-display text-2xl text-accent tracking-widest">
+        <a href="#" className="font-display font-bold text-xl text-accent tracking-widest">
           EIJI.DEV
         </a>
 
-        {/* Desktop Links */}
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
+          {links.map(({ label, href }) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={href}
+              href={href}
               className="text-mono text-xs text-muted hover:text-accent transition-colors duration-200 uppercase tracking-widest"
             >
-              {l.label}
+              {label}
             </a>
           ))}
           <a
@@ -48,21 +49,21 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden text-light"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(o => !o)}
           aria-label="Toggle menu"
         >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             {menuOpen ? (
               <>
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="18" y1="6"  x2="6"  y2="18" />
+                <line x1="6"  y1="6"  x2="18" y2="18" />
               </>
             ) : (
               <>
-                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="6"  x2="21" y2="6"  />
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="18" x2="21" y2="18" />
               </>
@@ -71,19 +72,26 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-surface border-b border-border px-6 py-6 flex flex-col gap-5">
-          {links.map((l) => (
+          {links.map(({ label, href }) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={href}
+              href={href}
               onClick={() => setMenuOpen(false)}
               className="text-mono text-sm text-muted hover:text-accent transition-colors uppercase tracking-widest"
             >
-              {l.label}
+              {label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="text-mono text-xs px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-ink transition-all duration-200 uppercase tracking-widest rounded-sm text-center"
+          >
+            Hire Me
+          </a>
         </div>
       )}
     </nav>

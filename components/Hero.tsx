@@ -6,7 +6,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `linear-gradient(rgba(176,38,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(176,38,255,0.4) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(9,107,144,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(9,107,144,0.2) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
         }}
       />
@@ -52,7 +52,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="px-8 py-3 bg-accent text-ink font-medium text-sm uppercase tracking-widest hover:bg-accent-2 transition-colors duration-200 rounded-sm"
+              className="px-8 py-3 bg-accent text-ink font-medium text-sm uppercase tracking-widest hover:opacity-85 transition-opacity duration-200 rounded-sm"
             >
               View My Work
             </a>

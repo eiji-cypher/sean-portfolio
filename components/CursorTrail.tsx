@@ -11,7 +11,7 @@ export default function CursorTrail() {
     if (!ctx) return
 
     let points: { x: number; y: number; age: number }[] = []
-    const neonGreen = '0, 255, 163' // Matches your --accent color
+    const accentOrange = '113, 183, 213' // #71B7D5
     let animationFrameId: number
 
     const resize = () => {
@@ -47,10 +47,10 @@ export default function CursorTrail() {
           
           const lifePercent = 1 - points[i].age / 35 // 1 (new) down to 0 (old)
           
-          ctx.strokeStyle = `rgba(${neonGreen}, ${lifePercent})`
+          ctx.strokeStyle = `rgba(${accentOrange}, ${lifePercent})`
           ctx.lineWidth = 5 * lifePercent
           ctx.shadowBlur = 15 * lifePercent
-          ctx.shadowColor = `rgba(${neonGreen}, ${lifePercent})`
+          ctx.shadowColor = `rgba(${accentOrange}, ${lifePercent})`
           ctx.lineCap = 'round'
           ctx.lineJoin = 'round'
           ctx.stroke()

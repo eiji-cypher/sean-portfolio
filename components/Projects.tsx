@@ -47,6 +47,22 @@ const projects: Project[] = [
   },
   {
     id: 5,
+    title: 'Pharmacy POS Web System',
+    description: 'Full-stack pharmacy point-of-sale web application built with Laravel, handling inventory management, transaction processing, and itemized receipt generation.',
+    tags: ['Laravel', 'PHP', 'MySQL', 'Blade'],
+    status: 'Live',
+    year: '2026',
+  },
+  {
+    id: 6,
+    title: 'Laboratory POS & Queue Ticket Printer',
+    description: 'Web-based laboratory POS system with an integrated queue number ticket printer, managing patient flow, billing transactions, and thermal receipt output via Laravel.',
+    tags: ['Laravel', 'PHP', 'MySQL', 'Blade'],
+    status: 'Live',
+    year: '2026',
+  },
+  {
+    id: 7,
     title: 'Emergency Disaster Management System',
     description: 'Standalone disaster response management desktop application programmed strictly in hardcoded Java without visual UI builders to enforce OOP patterns.',
     tags: ['Java', 'OOP', 'Data Structures'],
@@ -57,7 +73,7 @@ const projects: Project[] = [
 
 const statusColors: Record<Project['status'], string> = {
   Live: 'text-accent border-accent/30 bg-accent/10',
-  'In Progress': 'text-[#b026ff] border-[#b026ff]/30 bg-[#b026ff]/10',
+  'In Progress': 'text-[#096B90] border-[#096B90]/30 bg-[#096B90]/10',
   Archived: 'text-muted border-border bg-surface',
 }
 
